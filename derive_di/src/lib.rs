@@ -29,12 +29,40 @@ mod tests {
 
     #[test]
     fn injectable_test() {
-        #[injectable(factory => InjectableStruct)]
-        struct InjectableStruct;
+        #[injectable(factory => InjectableStruct {inner: "test".to_owned()})]
+        struct InjectableStruct {
+            inner: String,
+        }
 
         impl InjectableStruct {
             fn get(&self) -> String {
-                "test".to_owned()
+                self.inner.clone()
+            }
+        }
+
+        #[derive(Container)]
+        struct MyContainer {
+            i_struct: InjectableStruct,
+        }
+
+        assert_eq!("test", MyContainer::default().get_i_struct().get())
+    }
+
+    #[test]
+    fn injectable_test_fn_factory() {
+        fn factory_struct() -> InjectableStruct {
+            InjectableStruct {
+                inner: "test".to_owned(),
+            }
+        }
+        #[injectable(factory => factory_struct())]
+        struct InjectableStruct {
+            inner: String,
+        }
+
+        impl InjectableStruct {
+            fn get(&self) -> String {
+                self.inner.clone()
             }
         }
 
