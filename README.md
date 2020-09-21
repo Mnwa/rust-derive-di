@@ -1,2 +1,1 @@
-# derive_di
-The dependency injection pattern
+derive_di/README.md
