@@ -1,2 +1,2 @@
 [workspace]
-members = ["derive_di"]
+members = ["derive_di_macro", "derive_di_core", "derive_di"]

@@ -1,0 +1,11 @@
+[package]
+name = "derive_di"
+version = "0.1.0"
+authors = ["Mnwa <mihan@panfilov.biz>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+derive_di_macro = { version = "*", path = "../derive_di_macro" }
+derive_di_core = { version = "*", path = "../derive_di_core" }
