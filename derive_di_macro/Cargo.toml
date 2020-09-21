@@ -5,6 +5,9 @@ authors = ["Mnwa <mihan@panfilov.biz>"]
 description = "This macro realized dependency injection pattern"
 keywords = ["proc_macro", "procmacro", "derive", "dependency injection", "di", "container", "inject"]
 edition = "2018"
+license = "Apache-2.0/MIT"
+repository = "https://github.com/Mnwa/derive_di"
+documentation = "https://docs.rs/derive_di_macro"
 
 [lib]
 proc-macro = true
