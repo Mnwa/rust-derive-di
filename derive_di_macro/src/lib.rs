@@ -1,3 +1,4 @@
+//! Macro for dependency injection pattern realization
 extern crate proc_macro;
 use proc_macro::TokenStream;
 
@@ -6,6 +7,7 @@ use syn::parse::{Parse, ParseStream};
 use syn::punctuated::Punctuated;
 use syn::{parse_macro_input, Data, DeriveInput, Expr, PathSegment, Token, Type};
 
+/// Derive `Container` macro, will be implement getters, setters and `Default` trait for the struct.
 #[proc_macro_derive(Container, attributes(inject))]
 pub fn derive_container_fn(input: TokenStream) -> TokenStream {
     let derived_container = parse_macro_input!(input as DeriveInput);
@@ -80,6 +82,7 @@ pub fn derive_container_fn(input: TokenStream) -> TokenStream {
     out.into()
 }
 
+/// Auto implementation of Injectable trait
 #[proc_macro_attribute]
 pub fn injectable(args: TokenStream, input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);

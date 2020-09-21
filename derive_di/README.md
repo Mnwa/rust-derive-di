@@ -32,6 +32,7 @@ That code, which will be generated for you
 ```rust
 use derive_di::*;
 
+#[derive(Default)]
 struct InjectableStruct;
 impl Injectable for InjectableStruct {
     fn get_service() -> Self {
@@ -45,7 +46,6 @@ impl InjectableStruct {
     }
 }
 
-#[derive(Container)]
 struct MyContainer {
     i_struct: InjectableStruct,
 }
