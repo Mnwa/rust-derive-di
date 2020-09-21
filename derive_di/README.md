@@ -1,4 +1,9 @@
 # Dependency Injection pattern derive
+[![](https://github.com/Mnwa/derive_di/workflows/build/badge.svg?branch=master)](https://github.com/Mnwa/derive_di/actions?query=workflow%3Abuild)
+[![](https://docs.rs/derive_di/badge.svg)](https://docs.rs/derive_di/)
+[![](https://img.shields.io/crates/v/derive_di.svg)](https://crates.io/crates/derive_di)
+[![](https://img.shields.io/crates/d/derive_di.svg)](https://crates.io/crates/derive_di)
+
 Rust macro to automatically implement the **dependency injection** pattern for arbitrary structs.
 A simple `#[derive(Container)]` will generate new getters and setters for every field of your struct.
 Also, the Container will implement the `Default` trait, where will inject every field with `Injectable` trait.
