@@ -1,6 +1,6 @@
 [package]
 name = "derive_di"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Mnwa <mihan@panfilov.biz>"]
 edition = "2018"
 description = "This crate is realized the dependency injection pattern"
@@ -11,5 +11,5 @@ documentation = "https://docs.rs/derive_di"
 license = "Apache-2.0/MIT"
 
 [dependencies]
-derive_di_macro = { version = "0.2", path = "../derive_di_macro" }
+derive_di_macro = { version = "0.2.1", path = "../derive_di_macro" }
 derive_di_core = { version = "0.2", path = "../derive_di_core" }
