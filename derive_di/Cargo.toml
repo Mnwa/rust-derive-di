@@ -1,11 +1,11 @@
 [package]
 name = "derive_di"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Mnwa <mihan@panfilov.biz>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "This crate is realized the dependency injection pattern"
+keywords = ["proc_macro", "procmacro", "derive", "dependency injection", "di", "container", "inject", "pattern"]
 
 [dependencies]
-derive_di_macro = { version = "*", path = "../derive_di_macro" }
-derive_di_core = { version = "*", path = "../derive_di_core" }
+derive_di_macro = { version = "0.2", path = "../derive_di_macro" }
+derive_di_core = { version = "0.1", path = "../derive_di_core" }
