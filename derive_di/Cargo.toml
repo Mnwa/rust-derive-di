@@ -12,4 +12,4 @@ license = "Apache-2.0/MIT"
 
 [dependencies]
 derive_di_macro = { version = "0.2", path = "../derive_di_macro" }
-derive_di_core = { version = "0.1", path = "../derive_di_core" }
+derive_di_core = { version = "0.2", path = "../derive_di_core" }
