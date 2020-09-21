@@ -15,12 +15,6 @@ use derive_di::*;
 #[derive(Default)]
 struct InjectableStruct;
 
-impl InjectableStruct {
-    fn get(&self) -> String {
-        "test".to_owned()
-    }
-}
-
 #[derive(Container)]
 struct MyContainer {
     i_struct: InjectableStruct,
@@ -37,12 +31,6 @@ struct InjectableStruct;
 impl Injectable for InjectableStruct {
     fn get_service() -> Self {
         Default::default()
-    }
-}
-
-impl InjectableStruct {
-    fn get(&self) -> String {
-        "test".to_owned()
     }
 }
 
@@ -198,8 +186,8 @@ struct MyContainer {
 
 fn main() {      
     let mut container = MyContainer::default();
+    assert_eq!("test", container.get_i_struct().get());
     container.set_i_struct(Box::from(GetterMock));
-
     assert_eq!("mocked", container.get_i_struct().get())
 }
 ```
