@@ -23,6 +23,7 @@ pub fn derive_container_fn(input: TokenStream) -> TokenStream {
         let fn_getter_name = format_ident!("get_{}", field_name_lc);
         let fn_getter_mut_name = format_ident!("get_mut_{}", field_name_lc);
         let fn_setter_name = format_ident!("set_{}", field_name_lc);
+        let fn_into_name = format_ident!("into_{}", field_name_lc);
         let fn_type = field.ty.clone();
         quote! {
             pub fn #fn_getter_name(&self) -> &#fn_type {
@@ -33,6 +34,9 @@ pub fn derive_container_fn(input: TokenStream) -> TokenStream {
             }
             pub fn #fn_setter_name(&mut self, #field_name: #fn_type) {
                 self.#field_name = #field_name
+            }
+            pub fn #fn_into_name(self) -> #fn_type {
+                self.#field_name
             }
         }
     });
