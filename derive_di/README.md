@@ -42,7 +42,7 @@ impl MyContainer {
     pub fn get_i_struct(&self) -> &InjectableStruct {
         &self.i_struct
     }
-    pub fn get_mut_i_struct(&mut self) -> &mut InjectableStruct {
+    pub fn get_i_struct_mut(&mut self) -> &mut InjectableStruct {
         &mut self.i_struct
     }
     pub fn set_i_struct(&mut self, i_struct: InjectableStruct) {

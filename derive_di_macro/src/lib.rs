@@ -23,7 +23,7 @@ pub fn derive_container_fn(input: TokenStream) -> TokenStream {
         let field_name_lc = field_name.clone().to_string().to_lowercase();
 
         let fn_getter_name = format_ident!("get_{}", field_name_lc);
-        let fn_getter_mut_name = format_ident!("get_mut_{}", field_name_lc);
+        let fn_getter_mut_name = format_ident!("get_{}_mut", field_name_lc);
         let fn_setter_name = format_ident!("set_{}", field_name_lc);
         let fn_into_name = format_ident!("into_{}", field_name_lc);
         let fn_type = field.ty.clone();
